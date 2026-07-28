@@ -161,10 +161,6 @@ Eight vectors audited: label columns excluded from features; height maps used fo
 5. **Thermal thresholds are camera counts,** not calibrated °C.
 6. **T21 labels are the noisiest** — final scores partly measure extraction robustness.
 
-# 11. Recommendations for Submission
-
-Submit the R11 model (R12 as a secondary check): lag-aligned, quality-weighted quantile GBM on ensemble-median labels with CRPS-tuned conformal calibration, reporting **width and boundary functions with uncertainty bands** — covering every listed evaluation axis (width/boundary error, spatial variation, geometry agreement, calibration). Quote the 90–104 µm definitional range, include per-bin label uncertainty (`w_spread`), and lead the write-up with the physical justification: the validity×smoothness melt-boundary definition, melt-pool physics behind the features, and the Nyquist argument for why residual local variation is expressed as calibrated uncertainty rather than a point trace. Reproducibility: 16 scripts, fixed seeds, pure numpy — see `code/README.md`.
-
 # Appendix: Deliverables
 
 - `REPORT.md` — full 17-section working log (all intermediate numbers and experiments)
